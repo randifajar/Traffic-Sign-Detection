@@ -18,22 +18,6 @@ img_size = 416
 conf_thres = 0.4
 iou_thres = 0.5
 
-# @app.route("/", methods=["POST", "GET"])
-# def index():
-#     flash("Press The Button to Run Program")
-#     return render_template("index.html")
-
-
-# @app.route("/greet", methods=['POST', 'GET'])
-# def greeter():
-# cobacok.main_detect(weights, source, img_size, conf_thres, iou_thres)
-#     return render_template("index.html")
-
-# @app.route("/display")
-# def display_image():
-#     image_file = os.path.join(app.config)
-#     return render_template("index.html")
-
 photos = UploadSet('files', IMAGES)
 videos = UploadSet('files', 'mp4')
 configure_uploads(app, (photos, videos))
@@ -106,7 +90,7 @@ def detect_file(filename):
     source1 = url_for('get_source', filename=filename)
     source = "E:/Tugas/Semester 8/Tugas Akhir/GUI/TS Detection/ScaledYOLOv4" + source1
     print("source ", source)
-    cobacok.main_detect(weights, source, img_size, conf_thres, iou_thres)
+    yolo_detect.main_detect(weights, source, img_size, conf_thres, iou_thres)
     detect_file_url = url_for('get_file', filename=filename)
     print("detect_file_url ", detect_file_url)
     return render_template('detect_image.html', detect_file_url=detect_file_url)
@@ -117,7 +101,7 @@ def detect_video(filename):
     source1 = url_for('get_source', filename=filename)
     source = "E:/Tugas/Semester 8/Tugas Akhir/GUI/TS Detection/ScaledYOLOv4" + source1
     print("source ", source)
-    cobacok.main_detect(weights, source, img_size, conf_thres, iou_thres)
+    yolo_detect.main_detect(weights, source, img_size, conf_thres, iou_thres)
     detect_video_url = url_for('get_file', filename=filename)
     print("detect_video_url ", detect_video_url)
     return render_template('detect_video.html', detect_video_url=detect_video_url)
