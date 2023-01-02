@@ -11,8 +11,8 @@ import yolo_detect
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'apahayo'
-app.config['UPLOADED_FILES_DEST'] = 'E:/Tugas/Semester 8/Tugas Akhir/GUI/TS Detection/ScaledYOLOv4/uploads'
-app.config['INFERENCED_FILES_DEST'] = 'E:/Tugas/Semester 8/Tugas Akhir/GUI/TS Detection/ScaledYOLOv4/inference/output'
+app.config['UPLOADED_FILES_DEST'] = '/content/TA/uploads'
+app.config['INFERENCED_FILES_DEST'] = '/content/TA/inference/output'
 
 run_with_ngrok(app)
 
@@ -91,7 +91,7 @@ def upload_video():
 @app.route('/detect_image/<filename>', methods=['GET', 'POST'])
 def detect_file(filename):
     source1 = url_for('get_source', filename=filename)
-    source = "E:/Tugas/Semester 8/Tugas Akhir/GUI/TS Detection/ScaledYOLOv4" + source1
+    source = "/content/TA" + source1
     print("source ", source)
     yolo_detect.main_detect(weights, source, img_size, conf_thres, iou_thres)
     detect_file_url = url_for('get_file', filename=filename)
@@ -102,7 +102,7 @@ def detect_file(filename):
 @app.route('/detect_video/<filename>', methods=['GET', 'POST'])
 def detect_video(filename):
     source1 = url_for('get_source', filename=filename)
-    source = "E:/Tugas/Semester 8/Tugas Akhir/GUI/TS Detection/ScaledYOLOv4" + source1
+    source = "/content/TA" + source1
     print("source ", source)
     yolo_detect.main_detect(weights, source, img_size, conf_thres, iou_thres)
     detect_video_url = url_for('get_file', filename=filename)
