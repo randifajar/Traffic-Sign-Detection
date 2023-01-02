@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Say Hello</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+</head>
+
+<body>
+    <img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png" />
+    <br />
+    <a href="{{ url_for('upload_file') }}" class="btn btn-light btn-lg p-2 m-2">Deteksi Gambar</a>
+    <a href="{{ url_for('upload_video') }}" class="btn btn-light btn-lg p-2 m-2">Deteksi Video</a>
+</body>
+
+</html>
+
+</html>
