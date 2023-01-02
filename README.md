@@ -5,4 +5,4 @@ Program buat Tugas Akhir, implementasi Scaled-YOLOv4 milik WongKinYiu untuk pend
 
 Dataset Rambu-Rambu Lalu Lintas - Google Maps
 
-Scaled YOLOv4 - https://github.com/WongKinYiu/ScaledYOLOv4.git
+Scaled-YOLOv4 - https://github.com/WongKinYiu/ScaledYOLOv4.git
