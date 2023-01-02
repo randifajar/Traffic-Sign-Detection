@@ -1,3 +1,4 @@
+from flask_ngrok import run_with_ngrok
 from flask import Flask, render_template, flash, request, redirect, url_for, send_from_directory
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
@@ -12,6 +13,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'apahayo'
 app.config['UPLOADED_FILES_DEST'] = 'E:/Tugas/Semester 8/Tugas Akhir/GUI/TS Detection/ScaledYOLOv4/uploads'
 app.config['INFERENCED_FILES_DEST'] = 'E:/Tugas/Semester 8/Tugas Akhir/GUI/TS Detection/ScaledYOLOv4/inference/output'
+
+run_with_ngrok(app)
 
 weights = './weights/yolov4-csp.pt'
 img_size = 416
@@ -113,4 +116,4 @@ def main_menu():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run()
