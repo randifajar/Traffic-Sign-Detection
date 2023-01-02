@@ -6,7 +6,7 @@ from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 import os
 from wtforms.validators import InputRequired
-import cobacok
+import yolo_detect
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'apahayo'
