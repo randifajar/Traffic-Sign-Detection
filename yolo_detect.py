@@ -121,8 +121,8 @@ def detect(save_img=False):
                         plot_one_box(xyxy, im0, label=label,
                                      color=colors[int(cls)], line_thickness=2)
 
-            # Print time (inference + NMS)
-            # print('%sDone. (%.3fs)' % (s, t2 - t1))
+            Print time (inference + NMS)
+            print('%sDone. (%.3fs)' % (s, t2 - t1))
 
             # Stream results
             if view_img:
@@ -153,8 +153,7 @@ def detect(save_img=False):
         if platform == 'darwin' and not opt.update:  # MacOS
             os.system('open ' + save_path)
 
-    # print('Done. (%.3fs)' % (time.time() - t0))
-    return (im0)
+    print('Done. (%.3fs)' % (time.time() - t0))
 
 
 def main_detect(weights, source, img_size, conf_thres, iou_thres):
