@@ -1,18 +1,30 @@
 body {
     text-align: center;
-    background-color: SlateGrey;
+    /* background-color: SlateGrey; */
 }
+
 p {
     color: white;
-    font-family: Shanti;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.2em;
     display: inline-block;
     margin:  20px;
 }
-img {
+
+.index_image {
     margin: 60px 0 30px 0;
     width: 250px;
 }
+
+.image_image {
+    width: 50px;
+}
+
+h1 {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 input {
   width: 300px;
   margin: 20px 20px;
