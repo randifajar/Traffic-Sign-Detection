@@ -6,6 +6,7 @@ from flask_uploads import UploadSet, IMAGES, configure_uploads
 from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 import os
+import subprocess
 from wtforms.validators import InputRequired
 import yolo_detect
 
