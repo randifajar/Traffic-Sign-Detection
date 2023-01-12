@@ -84,15 +84,14 @@ def upload_video():
     return render_template('video.html', form=form, file_url=file_url, filename=filename)
 
 
-@app.route('/demo/<filename>', methods=['GET', 'POST'])
-def demo(filename):
-    print(filename)
-    demo_url = url_for('get_source', filename=filename)
-    print(demo_url)
-    if filename == 'test.png':
-        return render_template('demo_image.html', demo_url=demo_url)
-    else:
-        return render_template('demo_video.html', demo_url=demo_url)
+@app.route('/demo_image')
+def demo_image():
+    return render_template('demo_image.html')
+
+
+@app.route('/demo_video')
+def demo_video():
+    return render_template('demo_video.html')
     
 
 @app.route('/detect_image/<filename>', methods=['GET', 'POST'])
