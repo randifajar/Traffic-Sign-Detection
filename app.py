@@ -61,10 +61,6 @@ def upload_file():
     form = UploadForm()
     if form.validate_on_submit():
         filename = photos.save(form.photo.data)
-        # source1 = url_for('get_source', filename=filename)
-        # source = "E:/Tugas/Semester 8/Tugas Akhir/GUI/TS Detection/ScaledYOLOv4" + source1
-        # print(source)
-        # cobacok.main_detect(weights, source, img_size, conf_thres, iou_thres)
         file_url = url_for('get_source', filename=filename)
         print("filename ", filename)
         print("file_url ", file_url)
@@ -87,6 +83,17 @@ def upload_video():
         file_url = None
     return render_template('video.html', form=form, file_url=file_url, filename=filename)
 
+
+@app.route('/demo/<filename>', methods=['GET', 'POST'])
+def demo(filename):
+    print(filename)
+    demo_url = url_for('get_source', filename=filename)
+    print(demo_url)
+    if filename == 'test.png':
+        return render_template('demo_image.html', demo_url=demo_url)
+    else:
+        return render_template('demo_video.html', demo_url=demo_url)
+    
 
 @app.route('/detect_image/<filename>', methods=['GET', 'POST'])
 def detect_file(filename):
