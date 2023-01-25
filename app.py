@@ -11,7 +11,7 @@ from wtforms.validators import InputRequired
 import yolo_detect
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'apahayo'
+app.config['SECRET_KEY'] = 'aplikasita'
 app.config['UPLOADED_FILES_DEST'] = '/content/TA/uploads'
 app.config['INFERENCED_FILES_DEST'] = '/content/TA/inference/output'
 
@@ -19,7 +19,7 @@ run_with_ngrok(app)
 
 weights = './weights/yolov4-csp.pt'
 img_size = 416
-conf_thres = 0.4
+conf_thres = 0.5
 iou_thres = 0.5
 
 photos = UploadSet('files', IMAGES)
@@ -30,8 +30,8 @@ configure_uploads(app, (photos, videos))
 class UploadForm(FlaskForm):
     photo = FileField(
         validators=[
-            FileAllowed(photos, 'Only photos are allowed'),
-            FileRequired('File field should not be empty')
+            FileAllowed(photos, 'Hanya Foto Yang Bisa Diupload'),
+            FileRequired('File Field Tidak Boleh Kosong')
         ]
     )
     submit = SubmitField('Upload')
@@ -40,8 +40,8 @@ class UploadForm(FlaskForm):
 class UploadVideoForm(FlaskForm):
     video = FileField(
         validators=[
-            FileAllowed(videos, 'Only vidoes are allowed'),
-            FileRequired('File field should not be empty')
+            FileAllowed(videos, 'Hanya Video Yang Bisa Diupload'),
+            FileRequired('File Field Tidak Boleh Kosong')
         ]
     )
     submit = SubmitField('Upload')
