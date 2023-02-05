@@ -10,8 +10,6 @@ import subprocess
 from wtforms.validators import InputRequired
 import yolo_detect
 
-#HEHEHE
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'aplikasita'
 app.config['UPLOADED_FILES_DEST'] = '/content/TA/uploads'
