@@ -18,33 +18,25 @@
     <h5>Upload Video</h5>
     <br />
     <form action="" method="post" enctype="multipart/form-data">
-        {{ form.hidden_tag() }}
-
-        {% for error in form.video.errors %}
-        <span style="color: red;">{{ error }}</span>
-        {% endfor %}
-
         <div class="row justify-content-center">
             <div class="col-auto">
-                {{ form.video(class="form-control form-control-lg") }}
+              <input class="form-control form-control-lg" id="video" name="video" required="" type="file">
             </div>
             <div class="col-auto">
-                {{ form.submit(class="btn btn-success btn-lg px-5 my-3") }}
+              <input class="btn btn-success btn-lg px-5 my-3" id="submit" name="submit" type="submit" value="Upload">
             </div>
         </div>
     </form>
 
-    {% if file_url %}
     <div class="mt-4">
-        <video width="600px" height="auto" controls autoplay loop>
-            <source src="{{ file_url }}" type="video/mp4">
+        <video width="1200px" height="auto" controls autoplay loop>
+            <source src="{{ url_for('static', filename='deteksi/test001.mp4') }}" type="video/mp4">
         </video>
         <br>
-        <a href="{{ url_for('detect_video', filename = filename, cek = cek) }}" class="btn btn-danger btn-lg px-5 my-3">
+        <a href="{{ url_for('detect_video') }}" class="btn btn-danger btn-lg px-5 my-3">
             Deteksi Rambu
         </a>
     </div>
-    {% endif %}
 </body>
 
 </html>
