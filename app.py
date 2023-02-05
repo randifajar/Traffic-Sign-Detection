@@ -73,16 +73,7 @@ def upload_file():
 
 @app.route('/video', methods=['GET', 'POST'])
 def upload_video():
-    form = UploadVideoForm()
-    if form.validate_on_submit():
-        filename = videos.save(form.video.data)
-        file_url = url_for('get_source', filename=filename)
-        print("filename ", filename)
-        print("file_url ", file_url)
-    else:
-        filename = None
-        file_url = None
-    return render_template('video.html', form=form, file_url=file_url, filename=filename)
+    return render_template('video.html')
 
 
 @app.route('/demo_image')
@@ -106,17 +97,18 @@ def detect_file(filename):
     return render_template('detect_image.html', detect_file_url=detect_file_url)
 
 
-@app.route('/detect_video/<filename>', methods=['GET', 'POST'])
-def detect_video(filename):
+@app.route('/detect_video/', methods=['GET', 'POST'])
+def detect_video():
+    filename = "test001.mp4"
     source0 = "/content/TA"
-    source1 = url_for('get_source', filename=filename)
-    source_detection = source0 + source1
+    source_detection = "/content/TA/static/deteksi/test001.mp4"
     print("source_detection ", source_detection)
     yolo_detect.main_detect(weights, source_detection, img_size, conf_thres, iou_thres)
     source2 = url_for('get_file', filename=filename)
     source_convert = source0 + source2
     print("source_convert ", source_convert)
     subprocess.run(["ffmpeg","-i",source_convert,"/content/TA/inference/output/output.mp4"])
+    print("Done.")
     return render_template('detect_video.html', detect_video_url="/inference/output/output.mp4")
 
 
