@@ -2,6 +2,7 @@
 
 Program Tugas Akhir, implementasi Scaled-YOLOv4 milik WongKinYiu untuk pendeteksian Rambu-Rambu Lalu Litas di Indonesia.
 
+TA
 
 Dataset Rambu-Rambu Lalu Lintas - Google Maps
 
