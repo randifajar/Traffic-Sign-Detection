@@ -101,7 +101,7 @@ def detect_file(filename):
 def detect_video():
     filename = "detect.mp4"
     source0 = "/content/TA"
-    source_detection = "/content/TA/static/deteksi/detect.mp4"
+    source_detection = "/content/TA/static/detect/detect.mp4"
     print("source_detection ", source_detection)
     yolo_detect.main_detect(weights, source_detection, img_size, conf_thres, iou_thres)
     source2 = url_for('get_file', filename=filename)
