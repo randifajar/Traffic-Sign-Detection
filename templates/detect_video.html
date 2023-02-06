@@ -16,13 +16,12 @@
         <img class="image_image mt-5 mb-2" src="{{ url_for('static', filename='icons/logo.png') }}" />
     </a>
     <h5>Hasil Deteksi Video</h5>
-    {% if detect_video_url %}
     <div class="mt-4">
-        <video width="1200px" height="auto" controls>
-            <source src="{{ detect_video_url }}" type="video/mp4">
+        <video width="1700px" height="auto" controls>
+            <source src="{{ url_for('static', filename='demo/detect.mp4') }}" type="video/mp4">
         </video>
     </div>
-    {% endif %}
 </body>
 
 </html>
+
