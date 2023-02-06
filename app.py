@@ -99,17 +99,10 @@ def detect_file(filename):
 
 @app.route('/detect_video/', methods=['GET', 'POST'])
 def detect_video():
-    filename = "detect.mp4"
-    source0 = "/content/TA"
     source_detection = "/content/TA/static/detect/detect.mp4"
     print("source_detection ", source_detection)
     yolo_detect.main_detect(weights, source_detection, img_size, conf_thres, iou_thres)
-    source2 = url_for('get_file', filename=filename)
-    source_convert = source0 + source2
-    print("source_convert ", source_convert)
-    subprocess.run(["ffmpeg","-i",source_convert,"/content/TA/inference/output/output.mp4"])
-    print("Done.")
-    return render_template('detect_video.html', detect_video_url="/inference/output/output.mp4")
+    return render_template('detect_video.html', detect_video_url="/static/demo/detect.mp4")
 
 
 @app.route('/', methods=['GET', 'POST'])
