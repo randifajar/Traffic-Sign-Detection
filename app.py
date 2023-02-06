@@ -18,7 +18,7 @@ app.config['INFERENCED_FILES_DEST'] = '/content/TA/inference/output'
 run_with_ngrok(app)
 
 weights = './weights/yolov4-csp.pt'
-img_size = 416
+img_size = 896
 conf_thres = 0.5
 iou_thres = 0.5
 
