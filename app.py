@@ -102,7 +102,7 @@ def detect_video():
     source_detection = "/content/TA/static/detect/detect.mp4"
     print("source_detection ", source_detection)
     yolo_detect.main_detect(weights, source_detection, img_size, conf_thres, iou_thres)
-    return render_template('detect_video.html', detect_video_url="/static/demo/detect.mp4")
+    return render_template('detect_video.html')
 
 
 @app.route('/', methods=['GET', 'POST'])
