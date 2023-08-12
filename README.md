@@ -1,7 +1,5 @@
 # Sistem Pengenalan Citra Rambu-Rambu Lalu Lintas Menggunakan Algoritma YOLOv4
 
-# Daftar Isi:
-
 ## Abstrak
 Rambu-rambu lalu lintas merupakan alat pengendali lalu lintas untuk menyampaikan beberapa informasi berupa larangan, peringatan, perintah, atau petunjuk dengan tujuan untuk menertibkan pengendara. Pada rambu-rambu lalu lintas yang ditemui di jalan, banyak ditemukan rambu-rambu lalu lintas dengan kondisi yang jelek, sehingga susah untuk mengenali rambu-rambu tersebut. 
 
@@ -38,8 +36,6 @@ Jumlah rambu lalu lintas pada dataset eksplorasi adalah sebanyak 15 jenis, yaitu
 ## Alat
   1. Google Colaboratory
   2. Roboflow
-  3. Visual Studio Code
-  4. Ngrok
 
 ## Hasil Implementasi
 ### Skema Pelatihan
@@ -61,6 +57,19 @@ Data augmentation yang digunakan adalah
   9. Mosaic
       
 ### Pelatihan
+Proses pelatihan menggunakan lima varian learning rate, yaitu 0,1; 0,01; 0,001; 0,0013; dan 0,00261. Lima varian learning rate didapat dari nilai learning rate model YOLO versi lain. Epoch yang digunakan yaitu 100, 200, 300, 400, 500, dan 600. 
 ![image](https://github.com/randifajar/Traffic-Sign-Detection/assets/46032161/57cecc5f-3e48-4cc0-b365-fc4b54f8ef69)
 
 Hasil dari pelatihan menggunakan learning rate 0,01 dan nilai epoch 500 adalah nilai F1-Score sebesar 99,3%, nilai mAP 0,5 sebesar 99,5% dan mAP 0,5:0,95 yang diperoleh adalah sebesar 0,894 atau 89,4%.
+
+## Hasil Pelatihan
+![image](https://github.com/randifajar/Traffic-Sign-Detection/assets/46032161/b33cd4cd-87c1-4462-8f1e-d31f976b9afd)
+![image](https://github.com/randifajar/Traffic-Sign-Detection/assets/46032161/84653c63-fc2e-4cb7-a5b3-0f68f294c73e)
+
+## Credits
+  - [YOLOv4: Optimal Speed and Accuracy of Object Detection](https://arxiv.org/abs/2004.10934)
+  - [YOLOv4 Repo](https://github.com/AlexeyAB/darknet)
+  - [Scaled-YOLOv4: Scaling Cross Stage Partial Network](https://arxiv.org/abs/2011.08036)
+  - [Scaled-YOLOv4 Repo](https://github.com/WongKinYiu/ScaledYOLOv4)
+  - [Roboflow](https://roboflow.com/)
+  - [Google Maps & Street View](https://www.google.com/maps)
